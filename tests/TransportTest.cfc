@@ -1,6 +1,6 @@
 <cfcomponent extends="farcry.plugins.testmxunit.tests.FarcryTestCase">
 
-	<cfimport path="farcry.plugins.fcbhistory.packages.lib.transport" />
+	<cfimport path="farcry.plugins.fcbhistory.packages.fcb.transport" />
 
 	<!--- setup and teardown --->
 	<cffunction name="setUp" returntype="void" access="public">

@@ -28,7 +28,7 @@
 
 		<!--- init the default transport --->
 		<cfelse>
-			<cfset attachTransport('farcry.plugins.fcbhistory.packages.lib.transport', {}) />
+			<cfset attachTransport('farcry.plugins.fcbhistory.packages.fcb.transport', {}) />
 		</cfif>
 
 		<!--- init the levels (default as per the argument, or custom as passed through to init) --->
