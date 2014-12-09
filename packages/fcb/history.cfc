@@ -107,10 +107,15 @@
 
 		<cfset var logString = '' />
 
-		<!--- pass the log to each transport --->
-		<cfloop collection="#this.transports#" item="transport">
-			<cfset logString = this.transports[transport].log(level, message, reference, metadata) />
-		</cfloop>
+		<!--- should we pass this particular level onto the transports? --->
+		<cfif ArrayFindNoCase(variables.levels, arguments.level) GT 0>
+
+			<!--- pass the log to each transport --->
+			<cfloop collection="#this.transports#" item="transport">
+				<cfset logString = this.transports[transport].log(level, message, reference, metadata) />
+			</cfloop>
+
+		</cfif>
 
 		<cfreturn this />
 
